@@ -12,4 +12,6 @@ Design an email spam filter.
 
 ## A* Algorithm
 
+Find the shortest path between cities A and B using A* algorithm.
+
 - Code: [a-star](./a-star)
