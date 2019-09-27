@@ -66,11 +66,12 @@ def test(model, test_feature_filename, test_label_filename, test_email_num, test
     false_ham = 0
     for email_id in range(test_email_num):
         word_occurs = test_matrix[email_id]
-        if predict(model, word_occurs) == SPAM and test_labels[email_id] == SPAM:
+        predict_result = predict(model, word_occurs)
+        if predict_result == SPAM and test_labels[email_id] == SPAM:
             true_spam += 1
-        elif predict(model, word_occurs) == SPAM and test_labels[email_id] == HAM:
+        elif predict_result == SPAM and test_labels[email_id] == HAM:
             false_spam += 1
-        elif predict(model, word_occurs) == HAM and test_labels[email_id] == HAM:
+        elif predict_result == HAM and test_labels[email_id] == HAM:
             true_ham += 1
         else:
             false_ham += 1
